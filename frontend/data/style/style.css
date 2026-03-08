@@ -1,0 +1,71 @@
+/* APP BACKGROUND */
+
+.stApp{
+    background: linear-gradient(180deg,#0f172a,#020617);
+    color:#e5e7eb;
+}
+
+/* SIDEBAR */
+
+[data-testid="stSidebar"]{
+    background:#020617;
+    border-right:1px solid #1e293b;
+}
+
+/* HEADER CARD */
+
+.header-card{
+    background: linear-gradient(135deg,#1e293b,#020617);
+    border:1px solid #334155;
+    border-radius:14px;
+    padding:25px;
+    margin-bottom:25px;
+}
+
+/* METRICS */
+
+div[data-testid="metric-container"]{
+    background: linear-gradient(145deg,#0f172a,#020617);
+    border:1px solid #1e293b;
+    border-radius:12px;
+    padding:15px;
+}
+
+/* METRIC NUMBER COLOR */
+
+div[data-testid="metric-container"] div{
+    color:#22c55e;
+    font-size:26px;
+}
+
+/* SECTION BLOCKS */
+
+.section{
+    background:#020617;
+    border:1px solid #1e293b;
+    border-radius:12px;
+    padding:20px;
+    margin-bottom:20px;
+}
+
+/* BUTTONS */
+
+.stButton>button{
+    background:linear-gradient(135deg,#22c55e,#16a34a);
+    border:none;
+    border-radius:8px;
+    color:white;
+}
+
+/* DATAFRAME */
+
+[data-testid="stDataFrame"]{
+    border:1px solid #1e293b;
+    border-radius:10px;
+}
+
+/* HIDE FOOTER */
+
+footer{
+    visibility:hidden;
+}
