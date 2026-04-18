@@ -136,7 +136,7 @@ The project was developed using:
 
 ## Team
 
-Developed by Team Rocket for the DAP Hackathon Challenge.
+Developed by Team Rocket for the a Hackathon Challenge.
 
 ## License
 
