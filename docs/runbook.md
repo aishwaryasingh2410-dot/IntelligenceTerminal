@@ -1,11 +1,11 @@
-# CodeForge Runbook
+# Team Rocket Runbook
 
 ## 1. Load raw CSV data
 ```bash
 python -m backend.ingestion.load_csv_to_mongo
 ```
 
-This loads local files from `CodeForge/data` into MongoDB collection `raw_options_chain`.
+This loads local files from `Team Rocket/data` into MongoDB collection `raw_options_chain`.
 
 ## 2. Create indexes
 ```bash

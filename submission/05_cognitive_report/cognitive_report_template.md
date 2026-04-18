@@ -1,7 +1,7 @@
 # Cognitive Report Template
 
 ## Title
-Cognitive Report on CodeForge: AI-Powered Options Market Analytics
+Cognitive Report on Team Rocket: AI-Powered Options Market Analytics
 
 ## 1. Problem Understanding
 

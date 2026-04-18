@@ -1,7 +1,7 @@
-# CodeForge Report Outline
+# Team Rocket Report Outline
 
 ## Title
-CodeForge: AI-Powered Options Market Analytics with Cursor-Optimized Database Processing
+Team Rocket: AI-Powered Options Market Analytics with Cursor-Optimized Database Processing
 
 ## Abstract
 

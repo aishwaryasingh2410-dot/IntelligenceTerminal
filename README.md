@@ -1,103 +1,146 @@
-# CodeForge – AI-Powered Options Market Analytics Challenge
+# Team Rocket: AI-Powered Options Market Analytics with Cursor-Optimized Processing
 
 ## Overview
 
-Welcome to the **CodeForge FinTech Challenge**.
+This project is a comprehensive AI-powered analytics platform for options market data, developed as part of a hackathon challenge. It processes large-scale options chain data to extract meaningful insights, detect anomalies, and provide interactive visualizations.
 
-In this challenge, participants will build an **AI-powered analytics and visualization platform** that helps analyze derivatives options data and uncover meaningful patterns in market activity.
+The system is designed to handle high-frequency options data across multiple dimensions including time, strike prices, expiries, trading volume, and open interest. By using cursor-optimized database processing, it efficiently manages large datasets while providing real-time analytics.
 
-Options markets produce large volumes of high-frequency data across multiple dimensions such as **time, strike prices, expiries, trading volume, and open interest**. Extracting actionable insights from this complex data is challenging.
+## Features
 
-Your goal is to design a system that transforms raw options data into **clear visual insights and intelligent analytics**, helping users understand market behavior and identify potential opportunities.
+- **Data Ingestion & Processing**: Automated loading of options data into MongoDB with optimized cursor-based queries
+- **Market Analytics**: Calculation of key metrics like Put-Call Ratio (PCR), Max Pain, Open Interest concentration
+- **Anomaly Detection**: AI-driven identification of unusual market activity
+- **Interactive Dashboards**: Multiple visualization interfaces (Streamlit frontend, React dashboard, Node.js server)
+- **Performance Optimization**: Cursor-based database access for efficient large-scale data handling
+- **Real-time Processing**: Live data feed integration for continuous market monitoring
 
----
+## Architecture
 
-## Challenge Goals
+The project follows a modular architecture:
 
-Participants are expected to build a platform that can:
+- **Backend (Python)**: Core analytics engine with MongoDB integration
+- **Frontend (Streamlit)**: Interactive web interface for data exploration
+- **Dashboard (React)**: Advanced visualization dashboard
+- **Server (Node.js)**: API server for data serving
+- **Database (MongoDB)**: Document-based storage with optimized indexing
 
-- Process and structure large-scale options datasets
-- Visualize options market activity across strikes, expiries, and time
-- Identify patterns in **open interest, trading volume, and volatility**
-- Detect anomalies or unusual activity in the derivatives market
-- Use **AI or machine learning techniques** to analyze market behavior
+## Project Structure
 
-The final solution should help users explore options market data and generate meaningful insights through **interactive dashboards and analytical tools**.
-
----
-
-## Repository Structure
-codeforge-options-analytics/
-
-data/ # Dataset and metadata
-notebooks/ # Exploratory analysis notebook
-src/ # Core source code modules
-scripts/ # Scripts to run applications
-README.md # Project overview
-PROBLEM_STATEMENT.md
-requirements.txt
-
-
----
-
-## Dataset
-
-The dataset provided in the `data/` folder contains historical options market information.
-
-Example columns include:
-
-| Column | Description |
-|------|-------------|
-| datetime | Timestamp of the observation |
-| expiry | Option expiry date |
-| strike | Strike price |
-| spot_close | Underlying asset price |
-| oi_CE | Call option open interest |
-| oi_PE | Put option open interest |
-| volume_CE | Call option trading volume |
-| volume_PE | Put option trading volume |
-| ATM | At-the-money strike |
-
-Participants are encouraged to perform additional feature engineering to extract useful signals from the dataset.
-
----
+```
+├── backend/                 # Python backend with analytics modules
+│   ├── analysis/           # Market analysis algorithms
+│   ├── db/                 # Database connection and optimization
+│   ├── api/                # FastAPI routes
+│   └── pipelines/          # Data processing pipelines
+├── frontend/               # Streamlit web application
+│   ├── pages/             # Individual analysis pages
+│   └── components/        # Reusable UI components
+├── dashboard/              # React-based dashboard
+├── server/                 # Node.js API server
+├── data/                   # Sample datasets
+├── notebooks/              # Jupyter notebooks for analysis
+├── docs/                   # Documentation
+└── submission/             # Final project deliverables
+```
 
 ## Getting Started
 
-### 1. Clone the Repository
+### Prerequisites
 
-git clone <repository-url>
-cd codeforge-options-analytics
+- Python 3.8+
+- Node.js 16+
+- MongoDB
+- Git
 
+### Installation
 
-### 2. Install Dependencies
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/aishwaryasingh2410-dot/team-rocket.git
+   cd team-rocket
+   ```
 
+2. **Set up Python environment**
+   ```bash
+   pip install -r requirements.txt
+   ```
 
-pip install -r requirements.txt
+3. **Configure MongoDB**
+   - Set up MongoDB instance
+   - Create `.env` file with `MONGO_URI` (see `.env.example`)
 
+4. **Install Node.js dependencies**
+   ```bash
+   cd server && npm install
+   cd ../dashboard && npm install
+   ```
 
-### 3. Run the Example Dashboard
+### Running the Application
 
+1. **Start the backend**
+   ```bash
+   cd backend
+   python -m uvicorn api.main:app --reload
+   ```
 
-python scripts/run_dashboard.py
+2. **Start the Streamlit frontend**
+   ```bash
+   cd frontend
+   streamlit run app.py
+   ```
 
+3. **Start the React dashboard**
+   ```bash
+   cd dashboard
+   npm start
+   ```
 
-This will launch a simple starter dashboard built using **Streamlit**.
+4. **Start the Node.js server**
+   ```bash
+   cd server
+   npm start
+   ```
 
-Participants are expected to expand this dashboard with additional visualizations and analytics.
+## Key Analytics
 
----
+- **Put-Call Ratio (PCR)**: Sentiment indicator based on open interest
+- **Max Pain**: Strike price with maximum expiring options value
+- **Open Interest Clusters**: Concentration analysis across strikes
+- **Anomaly Detection**: Statistical identification of unusual activity
+- **Volatility Analysis**: Smile and surface calculations
 
-## What Participants Should Build
+## Dataset
 
-Teams should extend the repository to develop:
+The project uses options chain data with the following structure:
 
-- Interactive **data visualizations**
-- Strike-wise analysis of **open interest and volume**
-- **Volatility analysis tools**
-- **AI or machine learning models** to detect patterns
-- **Anomaly detection systems** for unusual options activity
-- Intuitive **analytics dashboards**
+| Field | Description |
+|-------|-------------|
+| datetime | Timestamp |
+| expiry | Option expiry date |
+| strike | Strike price |
+| spot_close | Underlying price |
+| oi_CE | Call open interest |
+| oi_PE | Put open interest |
+| volume_CE | Call volume |
+| volume_PE | Put volume |
+
+## Development
+
+The project was developed using:
+- **Python** for data processing and analytics
+- **MongoDB** for data storage
+- **Streamlit** for rapid prototyping
+- **React** for advanced dashboards
+- **Node.js** for API services
+
+## Team
+
+Developed by Team Rocket for the DAP Hackathon Challenge.
+
+## License
+
+This project is developed for educational and demonstration purposes.
 
 The goal is to transform raw derivatives data into **actionable insights for traders and analysts**.
 

@@ -1,12 +1,24 @@
-# CodeForge – AI-Powered Options Market Analytics Challenge
+# Team Rocket Frontend - Streamlit Application
 
-## Overview
+This is the Streamlit-based frontend for the Team Rocket options analytics platform.
 
-Welcome to the **CodeForge FinTech Challenge**.
+## Features
 
-In this challenge, participants will build an **AI-powered analytics and visualization platform** that helps analyze derivatives options data and uncover meaningful patterns in market activity.
+- Interactive market overview dashboard
+- Open interest analysis pages
+- PCR sentiment tracking
+- Volume heatmaps
+- Volatility analysis (smile and surface)
+- Anomaly detection visualizations
 
-Options markets produce large volumes of high-frequency data across multiple dimensions such as **time, strike prices, expiries, trading volume, and open interest**. Extracting actionable insights from this complex data is challenging.
+## Running the Application
+
+```bash
+cd frontend
+streamlit run app.py
+```
+
+The application will be available at `http://localhost:8501`
 
 Your goal is to design a system that transforms raw options data into **clear visual insights and intelligent analytics**, helping users understand market behavior and identify potential opportunities.
 

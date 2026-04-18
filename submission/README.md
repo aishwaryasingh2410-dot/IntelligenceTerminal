@@ -1,16 +1,16 @@
 # DAP Submission Pack
 
-This folder organizes the 8 required submission items for the CodeForge DAP project.
+This folder organizes the 8 required submission items for the Team Rocket DAP project.
 
 ## Required Deliverables
 
-1. `01_notebook/CodeForge_DAP_Analysis.ipynb`
+1. `01_notebook/Team_Rocket_DAP_Analysis.ipynb`
 2. `02_dataset/` containing the CSV files used for analysis
-3. `03_report/CodeForge_Report.docx`
-4. `03_report/CodeForge_Report.pdf`
-5. `04_presentation/CodeForge_Presentation.pptx`
-6. `04_presentation/CodeForge_Presentation.pdf`
-7. `01_notebook/CodeForge_DAP_Analysis.pdf`
+3. `03_report/Team_Rocket_Report.docx`
+4. `03_report/Team_Rocket_Report.pdf`
+5. `04_presentation/Team_Rocket_Presentation.pptx`
+6. `04_presentation/Team_Rocket_Presentation.pdf`
+7. `01_notebook/Team_Rocket_DAP_Analysis.pdf`
 8. `05_cognitive_report/Cognitive_Report.docx` or `.pdf`
 
 ## What Already Exists In This Repo
@@ -27,7 +27,7 @@ This folder organizes the 8 required submission items for the CodeForge DAP proj
 ## Recommended Final Submission Theme
 
 Title:
-`CodeForge: AI-Powered Options Market Analytics with Cursor-Optimized Data Processing`
+`Team Rocket: AI-Powered Options Market Analytics with Cursor-Optimized Data Processing`
 
 ## Minimum 5 Project Objectives
 
