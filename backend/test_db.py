@@ -1,5 +1,5 @@
-from backend.db.connection import options_collection
-data = options_collection.find_one()
+from backend.db.connection import options_chain
+data = options_chain.find_one()
 
 print("Connection Successful")
 print(data)
