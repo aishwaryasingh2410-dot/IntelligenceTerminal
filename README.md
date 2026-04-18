@@ -25,6 +25,18 @@ The project follows a modular architecture:
 - **Server (Node.js)**: API server for data serving
 - **Database (MongoDB)**: Document-based storage with optimized indexing
 
+## Dashboard Interfaces
+
+### Streamlit Frontend
+
+The Streamlit frontend is designed for rapid interactive analysis and quick prototyping. It is ideal for exploring raw market data, filtering by expiry and strike, and viewing analytics like PCR, anomaly alerts, and database performance results in a simple, responsive interface.
+
+### React Dashboard
+
+The React dashboard is the polished analytics layer for business-ready presentation and advanced visual storytelling. It highlights trends, performance benchmarking, market signals, and live-style analytics in a more immersive, presentation-ready layout.
+
+These two dashboard layers together support both fast iteration and final delivery: Streamlit for quick analytics exploration, and React for a refined dashboard experience.
+
 ## Project Structure
 
 ```
@@ -101,6 +113,28 @@ The project follows a modular architecture:
    cd server
    npm start
    ```
+
+## Screenshots
+
+Add your dashboard screenshot files into a folder named `docs/screenshots` and update the file names below if needed.
+
+### Dashboard Overview
+
+![Dashboard Overview](docs/screenshots/dashboard_overview.png)
+
+A high-level view of the dashboard showing the key market indicators, total open interest, total volume, and PCR.
+
+### Performance Benchmark
+
+![Performance Benchmark](docs/screenshots/database_performance.png)
+
+MongoDB query performance comparisons for normal vs cursor-optimized data access.
+
+### Intelligence Terminal
+
+![Intelligence Terminal](docs/screenshots/intelligence_terminal.png)
+
+Interactive analysis and metrics display for the options market intelligence terminal.
 
 ## Key Analytics
 
