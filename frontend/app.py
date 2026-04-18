@@ -43,13 +43,18 @@ h1,h2,h3,h4 { color: white; }
 </style>
 """, unsafe_allow_html=True)
 
+from dotenv import load_dotenv, find_dotenv
+
 # -----------------------------
 # MONGODB CONNECTION — cached so it only runs ONCE per session
 # -----------------------------
+load_dotenv(find_dotenv())
+
 @st.cache_resource
 def get_mongo_collection():
-    MONGO_URI = os.getenv("MONGO_URI", "mongodb+srv://aishwaryasingh2410_db_user:rZPAw8NKMJcW838v@cluster0.sdicuyj.mongodb.net/cursor_database"
-)
+    MONGO_URI = os.getenv("MONGO_URI")
+    if not MONGO_URI:
+        raise RuntimeError("Missing MONGO_URI environment variable. Set it in .env or the environment.")
     try:
         client = MongoClient(MONGO_URI, serverSelectionTimeoutMS=5000)
         db = client["cursor_database"]

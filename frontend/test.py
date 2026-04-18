@@ -1,9 +1,9 @@
 import os
-from dotenv import load_dotenv
+from dotenv import load_dotenv, find_dotenv
 from pymongo import MongoClient, errors
 
 # Load .env
-load_dotenv()
+load_dotenv(find_dotenv())
 
 # Read URI
 MONGO_URI = os.getenv("MONGO_URI")

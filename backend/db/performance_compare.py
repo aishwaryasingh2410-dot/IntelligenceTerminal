@@ -1,7 +1,7 @@
 from time import perf_counter
 
-from backend.db.connection import options_collection, raw_options_collection
-from backend.db.cursor_reader import fetch_in_batches
+from .connection import options_collection, raw_options_collection
+from .cursor_reader import fetch_in_batches
 
 
 def get_source_collection():

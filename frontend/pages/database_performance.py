@@ -2,6 +2,8 @@ import streamlit as st
 import pandas as pd
 import time
 import sys, os
+from dotenv import load_dotenv, find_dotenv
+load_dotenv(find_dotenv())
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..")))
 
 
@@ -12,7 +14,9 @@ st.caption("Comparing normal vs cursor-optimized MongoDB queries")
 collection = None
 try:
     from pymongo import MongoClient
-    MONGO_URI = os.getenv("MONGO_URI", "mongodb+srv://aishwaryasingh2410_db_user:rZPAw8NKMJcW838v@cluster0.sdicuyj.mongodb.net/cursor_database")
+    MONGO_URI = os.getenv("MONGO_URI")
+    if not MONGO_URI:
+        raise RuntimeError("Missing MONGO_URI environment variable.")
     client = MongoClient(MONGO_URI, serverSelectionTimeoutMS=5000)
     collection = client["cursor_database"]["options_chain"]
     st.success("✅ MongoDB Connected")

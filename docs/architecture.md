@@ -1,7 +1,7 @@
-# CodeForge Architecture
+# Team Rocket Architecture
 
 ## Overview
-CodeForge is a hybrid market-intelligence project designed to satisfy two goals at the same time:
+Team Rocket is a hybrid market-intelligence project designed to satisfy two goals at the same time:
 
 1. Data Analysis with Python
 2. Advanced Database Management with cursor-based optimization

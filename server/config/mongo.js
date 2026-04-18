@@ -1,3 +1,5 @@
+const path = require("path")
+require("dotenv").config({ path: path.resolve(__dirname, "..", "..", ".env") })
 const dns = require("dns")
 const { MongoClient } = require("mongodb")
 
@@ -10,7 +12,10 @@ if (dnsServers.length > 0) {
     dns.setServers(dnsServers)
 }
 
-const uri = process.env.MONGO_URI || "mongodb+srv://aishwaryasingh2410_db_user:rZPAw8NKMJcW838v@cluster0.sdicuyj.mongodb.net/cursor_database?appName=Cluster0"
+const uri = process.env.MONGO_URI
+if (!uri) {
+    throw new Error("Missing MONGO_URI environment variable. Set it in .env or the environment.")
+}
 
 const client = new MongoClient(uri)
 

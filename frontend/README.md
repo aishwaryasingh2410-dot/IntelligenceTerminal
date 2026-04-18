@@ -39,7 +39,7 @@ The final solution should help users explore options market data and generate me
 ---
 
 ## Repository Structure
-codeforge-options-analytics/
+Team Rocket-options-analytics/
 
 data/ # Dataset and metadata
 notebooks/ # Exploratory analysis notebook
@@ -79,7 +79,7 @@ Participants are encouraged to perform additional feature engineering to extract
 ### 1. Clone the Repository
 
 git clone <repository-url>
-cd codeforge-options-analytics
+cd Team Rocket-options-analytics
 
 
 ### 2. Install Dependencies

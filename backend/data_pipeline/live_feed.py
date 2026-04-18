@@ -1,9 +1,14 @@
 import yfinance as yf
 import time
 from pymongo import MongoClient
+from dotenv import load_dotenv, find_dotenv
 import os
 
-MONGO_URI = os.getenv("MONGO_URI", "mongodb+srv://aishwaryasingh2410_db_user:rZPAw8NKMJcW838v@cluster0.sdicuyj.mongodb.net/cursor_database")
+load_dotenv(find_dotenv())
+
+MONGO_URI = os.getenv("MONGO_URI")
+if not MONGO_URI:
+    raise RuntimeError("Missing MONGO_URI environment variable. Set it in .env or the environment.")
 client = MongoClient(MONGO_URI)
 collection = client["cursor_database"]["nifty_ticks"]
 POLL_SECONDS = int(os.getenv("NIFTY_POLL_SECONDS", "15"))

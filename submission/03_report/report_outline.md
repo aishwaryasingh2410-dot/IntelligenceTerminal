@@ -72,7 +72,7 @@ Table title example:
 
 ### 5.1 System Architecture
 
-Use [architecture.md](c:/Users/91810/OneDrive/Desktop/hackathon/CodeForge/docs/architecture.md) and explain:
+Use [architecture.md](c:/Users/91810/OneDrive/Desktop/hackathon/Team Rocket/docs/architecture.md) and explain:
 - ingestion layer
 - database layer
 - analytics layer
@@ -88,9 +88,9 @@ Explain each briefly:
 - Unusual OI detection
 
 Reference the implementation basis:
-- [pcr.py](c:/Users/91810/OneDrive/Desktop/hackathon/CodeForge/backend/analysis/pcr.py)
-- [max_pain.py](c:/Users/91810/OneDrive/Desktop/hackathon/CodeForge/backend/analysis/max_pain.py)
-- [anomaly.py](c:/Users/91810/OneDrive/Desktop/hackathon/CodeForge/backend/analysis/anomaly.py)
+- [pcr.py](c:/Users/91810/OneDrive/Desktop/hackathon/Team Rocket/backend/analysis/pcr.py)
+- [max_pain.py](c:/Users/91810/OneDrive/Desktop/hackathon/Team Rocket/backend/analysis/max_pain.py)
+- [anomaly.py](c:/Users/91810/OneDrive/Desktop/hackathon/Team Rocket/backend/analysis/anomaly.py)
 
 ### 5.3 Database Optimization
 
