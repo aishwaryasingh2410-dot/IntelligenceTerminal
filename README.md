@@ -116,25 +116,15 @@ These two dashboard layers together support both fast iteration and final delive
 
 ## Screenshots
 
-Add your dashboard screenshot files into a folder named `docs/screenshots` and update the file names below if needed.
+This project includes dashboard screenshots for the two main interfaces. Place the PNG files in `docs/screenshots/` with the names listed below.
 
-### Dashboard Overview
+| Screenshot | File | Description |
+|------------|------|-------------|
+| Dashboard Overview | `docs/screenshots/dashboard_overview.png` | High-level view of the dashboard with key market indicators, open interest, total volume, and PCR. |
+| Performance Benchmark | `docs/screenshots/database_performance.png` | Database performance UI showing normal vs cursor-optimized query benchmarking. |
+| Intelligence Terminal | `docs/screenshots/intelligence_terminal.png` | Interactive terminal view for analytics, anomaly detection, and market metrics. |
 
-![Dashboard Overview](docs/screenshots/dashboard_overview.png)
-
-A high-level view of the dashboard showing the key market indicators, total open interest, total volume, and PCR.
-
-### Performance Benchmark
-
-![Performance Benchmark](docs/screenshots/database_performance.png)
-
-MongoDB query performance comparisons for normal vs cursor-optimized data access.
-
-### Intelligence Terminal
-
-![Intelligence Terminal](docs/screenshots/intelligence_terminal.png)
-
-Interactive analysis and metrics display for the options market intelligence terminal.
+Once the files are added, the images will display automatically in this README.
 
 ## Key Analytics
 
