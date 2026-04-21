@@ -1,4 +1,4 @@
-# Team Rocket: AI-Powered Options Market Analytics with Cursor-Optimized Processing
+# AI-Powered Options Market Analytics with Cursor-Optimized Processing
 
 ## Overview
 
