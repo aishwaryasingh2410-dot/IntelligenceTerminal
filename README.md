@@ -116,15 +116,25 @@ These two dashboard layers together support both fast iteration and final delive
 
 ## Screenshots
 
-This project includes dashboard screenshots for the two main interfaces. Place the PNG files in `docs/screenshots/` with the names listed below.
+### 🤖 AI & Anomaly Detection
+![AI Unusual Activity Detector](screenshots/Ai_unusualactivitydetector.png)
+![AI Unusual Activity Graph](screenshots/ai-unsualactivityGraph.png)
+![Price Analysis & AI Anomaly Detection](screenshots/price_analysisandAI_anomlaydetetction.png)
 
-| Screenshot | File | Description |
-|------------|------|-------------|
-| Dashboard Overview | `docs/screenshots/dashboard_overview.png` | High-level view of the dashboard with key market indicators, open interest, total volume, and PCR. |
-| Performance Benchmark | `docs/screenshots/database_performance.png` | Database performance UI showing normal vs cursor-optimized query benchmarking. |
-| Intelligence Terminal | `docs/screenshots/intelligence_terminal.png` | Interactive terminal view for analytics, anomaly detection, and market metrics. |
+### 📊 Market Analytics
+![Put-Call Ratio](screenshots/pcr.png)
+![Put Call](screenshots/putcall.png)
+![Volume Heatmap](screenshots/volumeHeatmap.png)
 
-Once the files are added, the images will display automatically in this README.
+### 📈 Volatility
+![Volatility Smile](screenshots/volatilitysmile.png)
+![Volatility Surface](screenshots/volatilitysurface.png)
+
+### 🖥️ Dashboard Interfaces
+![React Terminal](screenshots/reactTerminal.png)
+![React Terminal 2](screenshots/reactTerminal2.png)
+![React Terminal 3](screenshots/raectTerminal3.png)
+![Streamlit Terminal](screenshots/streamlitTerminal.png)
 
 ## Key Analytics
 
