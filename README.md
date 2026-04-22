@@ -182,9 +182,8 @@ The goal is to transform raw derivatives data into **actionable insights for tra
 
 ## Use of Free and Open Source Software (FOSS)
 
-A core objective of this event is to promote the use of **Free and Open Source Software (FOSS)**.
+A core objective of this project is to promote the use of **Free and Open Source Software (FOSS)**.
 
-Participants will be **significantly evaluated based on how effectively they use FOSS tools and frameworks in their solution**.
 
 Examples of recommended open-source technologies include:
 
@@ -213,13 +212,10 @@ Examples of recommended open-source technologies include:
 - DuckDB
 - Apache Spark
 
-Teams that creatively leverage open-source ecosystems or build reusable open tools will receive additional consideration during evaluation.
 
 ---
 
-## Evaluation Criteria
-
-Submissions will be evaluated based on the following factors:
+HIGHLIGHTS
 
 ### Visualization Quality
 Clarity and effectiveness of visualizations in representing complex options data.
@@ -244,21 +240,9 @@ Originality in analytics techniques, visualization design, or platform features.
 
 ---
 
-## Submission Guidelines
-
-Each team submission should include:
-
-- Source code
-- Documentation explaining the approach
-- Instructions for running the solution
-- Any trained models or additional data processing scripts
-
----
 
 ## Final Note
 
 The purpose of this challenge is not only to build visual dashboards but to **extract meaningful insights from complex options market data using analytics and AI**.
-
-Participants are encouraged to experiment, explore new ideas, and build innovative solutions that improve understanding of derivatives markets.
 
 Good luck and happy building.
