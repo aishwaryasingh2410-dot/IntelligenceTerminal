@@ -5,7 +5,7 @@ import {
   ComposedChart, Cell, ReferenceLine, AreaChart, Area, CartesianGrid, LineChart, Line
 } from "recharts"
 
-const API = "http://localhost:5000/api/options"
+const API = process.env.REACT_APP_API_URL || "http://localhost:5000/api/options"
 const POLL = 2000
 
 const FALLBACK_TOP_OI = [
