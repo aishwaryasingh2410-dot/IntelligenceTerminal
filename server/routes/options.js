@@ -2,6 +2,7 @@ const express = require("express")
 const router = express.Router()
 const { getCollection, getDB, isMongoAvailable } = require("../config/mongo")
 const { loadLocalOptionsData } = require("../services/localOptionsData")
+const { fetchLiveMarketSnapshot } = require("../services/liveMarketData")
 
 function groupByStrike(records) {
   const grouped = new Map()
@@ -94,6 +95,8 @@ async function getLatestAnomalySignals(limit = 5) {
 
 router.get("/summary", async (req, res) => {
   try {
+    const liveSnapshot = await fetchLiveMarketSnapshot()
+
     if (isMongoAvailable()) {
       const summary = await getLatestMarketSummary() || await getLatestSnapshot()
       const anomalies = await getLatestAnomalySignals(5)
@@ -116,11 +119,21 @@ router.get("/summary", async (req, res) => {
             anomaly_score,
           })),
           updatedAt: summary.updated_at || summary.snapshot_time || null,
+          live: liveSnapshot,
         })
       }
     }
 
-    return res.json(buildFallbackSummary())
+    const fallback = buildFallbackSummary()
+    if (liveSnapshot) {
+      return res.json({
+        ...fallback,
+        live: liveSnapshot,
+        source: "local_csv_fallback_with_live_market",
+      })
+    }
+
+    return res.json(fallback)
   } catch (e) { console.error(e); res.status(500).json({ error: "Server error" }) }
 })
 
@@ -155,6 +168,20 @@ router.get("/top-oi", async (req, res) => {
     ]).toArray()
     res.json(data)
   } catch (e) { console.error(e); res.status(500).json({ error: "Server error" }) }
+})
+
+router.get("/live-market", async (req, res) => {
+  try {
+    const snapshot = await fetchLiveMarketSnapshot()
+    if (!snapshot) {
+      return res.status(404).json({ error: "Live market data is not configured or unavailable" })
+    }
+
+    return res.json(snapshot)
+  } catch (error) {
+    console.error(error)
+    return res.status(500).json({ error: "Failed to fetch live market data" })
+  }
 })
 
 // CALL vs PUT OI
@@ -293,14 +320,24 @@ router.get("/unusual-oi", async (req, res) => {
 // NIFTY TICKS — live price data
 router.get("/nifty-ticks", async (req, res) => {
   try {
-    const data = await getDB()
+    const db = getDB()
+
+    if (!db) {
+      return res.json([])
+    }
+
+    const data = await db
       .collection("nifty_ticks")
       .find({})
       .sort({ datetime: -1 })
       .limit(60)
       .toArray()
+
     res.json(data.reverse())
-  } catch (e) { console.error(e); res.status(500).json({ error: e.message }) }
+  } catch (e) {
+    console.error(e)
+    res.status(500).json({ error: e.message })
+  }
 })
 
 module.exports = router

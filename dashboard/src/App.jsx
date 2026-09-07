@@ -79,6 +79,7 @@ export default function App() {
   const [oiHistory, setOiHistory] = useState([])
   const [dataSource, setDataSource] = useState("")
   const [niftyTicks, setNiftyTicks] = useState([])
+  const [liveMarket, setLiveMarket] = useState(null)
   const hasLiveData = topOI.length > 0 || pcr != null || maxPain != null || callPut.callOI > 0 || callPut.putOI > 0
   const useFallback = !hasLiveData && errors.length > 0
 
@@ -90,7 +91,8 @@ export default function App() {
   const displaySentiment = useFallback ? FALLBACK_SENTIMENT : sentiment
   const latestNiftyTick = niftyTicks[niftyTicks.length - 1] || null
   const previousNiftyTick = niftyTicks[niftyTicks.length - 2] || null
-  const niftyPrice = latestNiftyTick?.close ?? null
+  const liveSpot = liveMarket?.spot ?? liveMarket?.price ?? null
+  const niftyPrice = liveSpot ?? latestNiftyTick?.close ?? null
   const niftyMove = latestNiftyTick && previousNiftyTick ? latestNiftyTick.close - previousNiftyTick.close : 0
   const niftyMovePct = latestNiftyTick && previousNiftyTick && previousNiftyTick.close
     ? (niftyMove / previousNiftyTick.close) * 100
@@ -126,6 +128,9 @@ export default function App() {
         }))
         setNiftyTicks(ticks)
       }).catch(() => errs.push("nifty-ticks")),
+      axios.get(`${API}/live-market`).then(r => {
+        setLiveMarket(r.data || null)
+      }).catch(() => errs.push("live-market")),
     ])
     setErrors(errs); setLastUpdated(now); setTick(t => t + 1)
   }, [])

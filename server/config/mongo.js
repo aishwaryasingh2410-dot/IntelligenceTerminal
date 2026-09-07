@@ -1,5 +1,6 @@
 const path = require("path")
 require("dotenv").config({ path: path.resolve(__dirname, "..", "..", ".env") })
+
 const dns = require("dns")
 const { MongoClient } = require("mongodb")
 
@@ -13,16 +14,21 @@ if (dnsServers.length > 0) {
 }
 
 const uri = process.env.MONGO_URI
-if (!uri) {
-    throw new Error("Missing MONGO_URI environment variable. Set it in .env or the environment.")
-}
 
-const client = new MongoClient(uri)
-
-let collection
+let client = null
+let collection = null
 let mongoAvailable = false
 
+if (uri) {
+    client = new MongoClient(uri)
+}
+
 async function connectDB() {
+    if (!client) {
+        console.log("MongoDB not configured, using local CSV fallback")
+        return
+    }
+
     try {
         await client.connect()
 
@@ -34,10 +40,10 @@ async function connectDB() {
     } catch (error) {
         collection = null
         mongoAvailable = false
+
         console.warn("MongoDB unavailable, using local CSV fallback")
         console.warn(error.message)
     }
-
 }
 
 function getCollection() {
@@ -45,6 +51,7 @@ function getCollection() {
 }
 
 function getDB() {
+    if (!client) return null
     return client.db("cursor_database")
 }
 
@@ -52,4 +59,9 @@ function isMongoAvailable() {
     return mongoAvailable
 }
 
-module.exports = { connectDB, getCollection, getDB, isMongoAvailable }
+module.exports = {
+    connectDB,
+    getCollection,
+    getDB,
+    isMongoAvailable
+}

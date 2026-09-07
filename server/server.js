@@ -9,6 +9,20 @@ const app = express()
 app.use(cors())
 app.use(express.json())
 
+app.get("/", (req, res) => {
+  res.json({
+    status: "ok",
+    service: "options-api",
+    message: "Options API is running",
+    endpoints: [
+      "/api/options/summary",
+      "/api/options/live-market",
+      "/api/options/top-oi",
+      "/api/options/pcr",
+    ],
+  })
+})
+
 app.use("/api/options", optionsRoutes)
 
 async function startServer() {
